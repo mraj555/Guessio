@@ -77,7 +77,7 @@ class CreateRoomScreen extends StatelessWidget {
             ),
             SizedBox(height: 20.h),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: controller.onCreateRoom,
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blue,
                 foregroundColor: Colors.white,

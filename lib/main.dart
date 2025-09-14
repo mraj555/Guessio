@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:guessio/screen/home_screen.dart';
+import 'package:guessio/screen/paint_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +17,6 @@ class MyApp extends StatelessWidget {
       designSize: Size(392.73, 738.18),
       child: GetMaterialApp(
         title: 'Guessio',
-        theme: ThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple)),
         debugShowCheckedModeBanner: false,
         home: HomeScreen(),
       ),
