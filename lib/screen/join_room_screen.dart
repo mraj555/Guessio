@@ -34,7 +34,7 @@ class JoinRoomScreen extends StatelessWidget {
             ),
             SizedBox(height: 20.h),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: controller.onJoinRoom,
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blue,
                 foregroundColor: Colors.white,

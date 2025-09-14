@@ -28,13 +28,15 @@ class PaintController extends GetxController {
     if (data["screenFrom"] == "createRoom") {
       data.remove("screenFrom");
       socket.emit('create-game', data);
+    } else {
+      data.remove("screenFrom");
+      socket.emit('join-game', data);
     }
 
     ///Listen to Connect
     socket.onConnect((data) {
-      log("$data", name: "Socket Data");
-      socket.on('updateRoom', (data) {
-        room_data = data;
+      socket.on('updateRoom', (value) {
+        if (value is String) room_data = value;
         if (data['isJoin'] != true) {
           ///Start the timer
         }
