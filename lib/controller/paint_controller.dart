@@ -9,6 +9,7 @@ import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:guessio/models/touch_points.dart';
+import 'package:guessio/screen/home_screen.dart';
 import 'package:socket_io_client/socket_io_client.dart';
 
 class PaintController extends GetxController {
@@ -208,8 +209,19 @@ class PaintController extends GetxController {
         }
         update();
       });
+
+      socket.on('notCorrectGame', (data) {
+        Get.offAll(() => HomeScreen());
+      });
     });
     update();
+  }
+
+  @override
+  onClose() {
+    socket.dispose();
+    timer.cancel();
+    super.onClose();
   }
 
   ///Functionality for on Pan Start Button
